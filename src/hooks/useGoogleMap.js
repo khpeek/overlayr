@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import GoogleMapsApiLoader from "google-maps-api-loader";
 
-const apiKey = "AIzaSyCVBthtEmWi0Ul8mejDQrBlOULXB1kTB3I";
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const eventsMapping = {
   onCenterChanged: ["center_changed", map => map.getCenter()],
