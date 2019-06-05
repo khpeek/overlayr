@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import Map from './components/Map'
+import Map from './components/Map';
 import GroundOverlay from './components/GroundOverlay';
+import SearchBox from './components/SearchBox';
 
 function App() {
   const [bounds, setBounds] = useState({});
@@ -13,6 +14,7 @@ function App() {
         center={{ lat: 40.740, lng: -74.18 }}
         events={{ onBoundsChanged: arg => setBounds(arg) }}
       >
+        <SearchBox />
         <GroundOverlay
           url='https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg'
           bounds={{
