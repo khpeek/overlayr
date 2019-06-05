@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import Map from './components/Map'
-import GoogleMap from './components/GoogleMap';
 import GroundOverlay from './components/GroundOverlay';
 
 function App() {
