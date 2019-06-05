@@ -7,7 +7,7 @@ const options = {
 }
 
 export default function GoogleMap(props) {
-  const { mapRef, maps, map } = useGoogleMap(options);
+  const { maps, map, mapRef, loading } = useGoogleMap(options);
 
   return (
     <div className="map-container">

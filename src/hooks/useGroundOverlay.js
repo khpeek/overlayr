@@ -1,14 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
-export default function useGroundOverlay({ url, bounds, maps, map, ...options }) {
-  const [overlay, setOverlay] = useState();
+const eventMapping = {
+  onClick: "click",
+  onDoubleClick: "dblclick"
+};
 
+export default function useGroundOverlay({
+  url,
+  bounds,
+  maps,
+  map,
+  events,
+  opacity
+}) {
+  const [groundOverlay, setGroundOverlay] = useState();
   useEffect(() => {
-    const groundOverlay = new maps.GroundOverlay(url, bounds, options);
+    const groundOverlay = new maps.GroundOverlay(
+      url,
+      bounds
+    );
     groundOverlay.setMap(map);
+    groundOverlay.setOpacity(opacity);
 
-    setOverlay(groundOverlay);
-  }, [url, bounds, options, map, maps]);
+    // Object.keys(events).forEach(eventName =>
+    //   groundOverlay.addListener(eventMapping[eventName], events[eventName])
+    // );
+    setGroundOverlay(groundOverlay);
+  }, []);
 
-  return overlay;
+  return groundOverlay;
 }
