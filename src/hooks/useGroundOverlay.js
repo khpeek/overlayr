@@ -17,7 +17,7 @@ export default function useGroundOverlay({
     groundOverlay.setOpacity(opacity);
 
     setGroundOverlay(groundOverlay);
-  }, []);
+  }, [opacity]);
 
   return groundOverlay;
 }
